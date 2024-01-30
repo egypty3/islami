@@ -46,6 +46,10 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
+      darkTheme: ThemeData(
+
+      ),
+      themeMode: ThemeMode.light ,
       routes: {
         SplashScreen.routeName: (_) => SplashScreen(),
         ChapterDetailsScreen.routeName: (_)=>ChapterDetailsScreen(),
