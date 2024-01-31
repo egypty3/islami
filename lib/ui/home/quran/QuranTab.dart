@@ -133,7 +133,7 @@ class QuranTab extends StatelessWidget {
                 return ChapterTitleWidget(names[index],index);
               },
               separatorBuilder: (context, index) => Container(
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).dividerColor,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),

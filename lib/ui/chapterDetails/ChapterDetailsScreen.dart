@@ -39,7 +39,7 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
                   },
                   itemCount: verses.length,
                     separatorBuilder: (context, index) => Container(
-                      color: Theme.of(context).primaryColor,
+                      color: Theme.of(context).dividerColor,
                       width: double.infinity,
                       height: 2,
                       margin: EdgeInsets.symmetric(horizontal: 64),

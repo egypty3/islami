@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/MyThemeData.dart';
 import 'package:islami/ui/home/settings/SettingsTab.dart';
 import 'hadeth/HadethTab.dart';
 import 'quran/QuranTab.dart';
@@ -20,7 +21,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/images/main_background.png'))),
+                image:  AssetImage(MyThemeData.isDarkEnabled?
+                'assets/images/main_background_dark.png'
+                    :'assets/images/main_background.png')
+            )
+        ),
         child: Scaffold(
           appBar: AppBar(
 
