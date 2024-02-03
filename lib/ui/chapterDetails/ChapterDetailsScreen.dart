@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islami/ui/MyThemeData.dart';
 import 'package:islami/ui/chapterDetails/ChapterDetailsArgs.dart';
 import 'package:islami/ui/chapterDetails/VerseWidget.dart';
 
@@ -22,7 +23,11 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage('assets/images/main_background.png'),fit: BoxFit.fill)),
+              image:  AssetImage(MyThemeData.isDarkEnabled?
+              'assets/images/main_background_dark.png'
+                  :'assets/images/main_background.png')
+          )
+      ),
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.title),

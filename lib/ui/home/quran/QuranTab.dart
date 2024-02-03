@@ -126,6 +126,8 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Image.asset('assets/images/quran_header_image.png')),
+        Text('Chapter Name',
+        style: Theme.of(context).textTheme.titleMedium,),
         Expanded(
           flex: 3,
           child: ListView.separated(

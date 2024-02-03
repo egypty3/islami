@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:islami/ui/MyThemeData.dart';
 import '/ui/home/HomeScreen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -26,10 +27,10 @@ class _SplashScreenState extends State<SplashScreen> {
         body: Container(
             width: double.infinity,
             child: Image.asset(
-              'assets/images/splash_background.png',
+              (MyThemeData.isDarkEnabled)
+                  ? 'assets/images/splash_background_dark.png'
+                  : 'assets/images/splash_background.png',
               fit: BoxFit.fill,
-            )
-        )
-    );
+            )));
   }
 }

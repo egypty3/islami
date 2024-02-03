@@ -6,7 +6,7 @@ class MyThemeData{
   static const Color darkPrimary = Color(0xFF141A2E);
   static const Color darkSecondary = Color(0xFFFACC1D);
   static ThemeData lightTheme = ThemeData(
-    textTheme: TextTheme(
+    textTheme: const  TextTheme(
       headlineSmall: TextStyle(
           fontSize: 25,
           fontWeight: FontWeight.w600,
@@ -24,7 +24,8 @@ class MyThemeData{
       )
     ),
     cardTheme: CardTheme(
-      surfaceTintColor:  Colors.white,
+      color: Colors.white,
+      surfaceTintColor:  Colors.transparent,
       elevation: 18,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18)),
@@ -56,8 +57,26 @@ class MyThemeData{
     useMaterial3: true,
   );
   static ThemeData darkTheme = ThemeData(
+    textTheme: const  TextTheme(
+        headlineSmall: TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w600,
+            color: Colors.white
+        ) ,
+        titleMedium:  TextStyle(
+            fontSize: 25,
+            fontWeight: FontWeight.w400,
+            color: Colors.white
+        ),
+        bodyMedium: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 20,
+            color: Colors.white
+        )
+    ),
     cardTheme: CardTheme(
-      surfaceTintColor:  Colors.white,
+      color: darkPrimary,
+      surfaceTintColor:  Colors.transparent,
       elevation: 18,
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(18)),

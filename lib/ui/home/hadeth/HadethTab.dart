@@ -33,7 +33,7 @@ class _HadethTabState extends State<HadethTab> {
                         color: Theme.of(context).primaryColor, width: 2))),
             child: Text(
               'Hadeth',
-              style: TextStyle(fontSize: 24),
+              style: Theme.of(context).textTheme.titleMedium,
             )),
         Expanded(
           flex: 3,
