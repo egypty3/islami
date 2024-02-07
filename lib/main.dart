@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Splash Screen',
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      themeMode: ThemeMode.dark ,
+      themeMode: ThemeMode.light ,
       routes: {
         SplashScreen.routeName: (_) => SplashScreen(),
         ChapterDetailsScreen.routeName: (_)=>ChapterDetailsScreen(),

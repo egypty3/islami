@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyThemeData{
-  static bool isDarkEnabled = true;
+  static bool isDarkEnabled = false;
   static const Color lightPrimary = Color(0xFFB7935F);
+  static const Color lightSecondary = Color(0x87B7935F);
   static const Color darkPrimary = Color(0xFF141A2E);
   static const Color darkSecondary = Color(0xFFFACC1D);
   static ThemeData lightTheme = ThemeData(
@@ -49,12 +50,17 @@ class MyThemeData{
     colorScheme: ColorScheme.fromSeed(
         seedColor: lightPrimary,
         primary: lightPrimary,
-        secondary: Color(0x87B7935F),
+        secondary: lightSecondary,
         onPrimary: Colors.white,
-        onSecondary: Colors.black
+        onSecondary: Colors.black,
+        background: Colors.white
     ),
-    dividerColor: darkPrimary,
     useMaterial3: true,
+    dividerColor: lightPrimary,
+   bottomSheetTheme: const BottomSheetThemeData(
+        backgroundColor: Colors.white
+    )
+
   );
   static ThemeData darkTheme = ThemeData(
     textTheme: const  TextTheme(
@@ -100,11 +106,15 @@ class MyThemeData{
     colorScheme: ColorScheme.fromSeed(
         seedColor: darkPrimary,
         primary: darkPrimary,
-        secondary: darkPrimary,
+        secondary: darkSecondary,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
+        background: darkPrimary
     ),
-    dividerColor: darkSecondary,
     useMaterial3: true,
+    dividerColor: darkSecondary,
+    bottomSheetTheme: const BottomSheetThemeData(
+      backgroundColor: darkPrimary
+    )
   );
 }

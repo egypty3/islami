@@ -29,11 +29,14 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 24, color: Theme.of(context).primaryColor),
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(color: Theme.of(context).colorScheme.secondary),
         ),
         Icon(
           Icons.check,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
         )
       ],
     );
@@ -42,9 +45,7 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   Widget getUnselectedItem(String text) {
     return Text(
       text,
-      style: TextStyle(
-        fontSize: 24,
-      ),
+      style: Theme.of(context).textTheme.titleMedium,
     );
   }
 }

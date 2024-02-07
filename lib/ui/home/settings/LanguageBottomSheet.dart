@@ -15,10 +15,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          getSelectedItem('English'),
-          getUnselectedItem('العربية')
-        ],
+        children: [getSelectedItem('English'), getUnselectedItem('العربية')],
       ),
     );
   }
@@ -29,11 +26,14 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
       children: [
         Text(
           text,
-          style: TextStyle(fontSize: 24, color: Theme.of(context).primaryColor),
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(color: Theme.of(context).colorScheme.secondary),
         ),
         Icon(
           Icons.check,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).colorScheme.secondary,
         )
       ],
     );
@@ -42,9 +42,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
   Widget getUnselectedItem(String text) {
     return Text(
       text,
-      style: TextStyle(
-        fontSize: 24,
-      ),
+      style: Theme.of(context).textTheme.titleMedium,
     );
   }
 }
