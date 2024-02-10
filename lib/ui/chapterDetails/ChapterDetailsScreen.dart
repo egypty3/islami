@@ -3,6 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:islami/ui/MyThemeData.dart';
 import 'package:islami/ui/chapterDetails/ChapterDetailsArgs.dart';
 import 'package:islami/ui/chapterDetails/VerseWidget.dart';
+import 'package:provider/provider.dart';
+
+import '../../providers/SettingsProvider.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routeName = 'chapter-details';
@@ -19,15 +22,12 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     if (verses.isEmpty) {
       loadFile(args.index);
     }
+    var provider = Provider.of<SettingsProvider>(context);
 
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image:  AssetImage(MyThemeData.isDarkEnabled?
-              'assets/images/main_background_dark.png'
-                  :'assets/images/main_background.png')
-          )
-      ),
+              image: AssetImage(provider.getBackgroundImage()))),
       child: Scaffold(
         appBar: AppBar(
           title: Text(args.title),
@@ -39,17 +39,16 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
             : Card(
                 margin: EdgeInsets.symmetric(vertical: 48, horizontal: 24),
                 child: ListView.separated(
-                  itemBuilder: (context, index) {
-                    return VerseWidget(verses[index], index);
-                  },
-                  itemCount: verses.length,
+                    itemBuilder: (context, index) {
+                      return VerseWidget(verses[index], index);
+                    },
+                    itemCount: verses.length,
                     separatorBuilder: (context, index) => Container(
-                      color: Theme.of(context).dividerColor,
-                      width: double.infinity,
-                      height: 2,
-                      margin: EdgeInsets.symmetric(horizontal: 64),
-                    )
-                ),
+                          color: Theme.of(context).dividerColor,
+                          width: double.infinity,
+                          height: 2,
+                          margin: EdgeInsets.symmetric(horizontal: 64),
+                        )),
               ),
       ),
     );

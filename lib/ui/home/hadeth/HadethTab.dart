@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'HadethTitleWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 import 'Hadeth.dart';
@@ -32,7 +33,7 @@ class _HadethTabState extends State<HadethTab> {
                     horizontal: BorderSide(
                         color: Theme.of(context).primaryColor, width: 2))),
             child: Text(
-              'Hadeth',
+              AppLocalizations.of(context)!.hadeth,
               style: Theme.of(context).textTheme.titleMedium,
             )),
         Expanded(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'ChapterTitleWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> names = [
@@ -126,7 +127,7 @@ class QuranTab extends StatelessWidget {
         Expanded(
             flex: 1,
             child: Image.asset('assets/images/quran_header_image.png')),
-        Text('Chapter Name',
+        Text(AppLocalizations.of(context)!.chapter_name,
         style: Theme.of(context).textTheme.titleMedium,),
         Expanded(
           flex: 3,

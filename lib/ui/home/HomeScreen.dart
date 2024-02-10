@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/providers/SettingsProvider.dart';
 import 'package:islami/ui/MyThemeData.dart';
 import 'package:islami/ui/home/settings/SettingsTab.dart';
+import 'package:provider/provider.dart';
 import 'hadeth/HadethTab.dart';
 import 'quran/QuranTab.dart';
 import 'radio/RadioTab.dart';
@@ -19,12 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-                image:  AssetImage(MyThemeData.isDarkEnabled?
-                'assets/images/main_background_dark.png'
-                    :'assets/images/main_background.png')
+                image:  AssetImage(
+                provider.getBackgroundImage()
+                )
             )
         ),
         child: Scaffold(
@@ -61,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: Icon(Icons.settings),
-                  label: 'Settings')
+                  label: AppLocalizations.of(context)!.settings)
 
             ],
           ),
